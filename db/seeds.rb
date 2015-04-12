@@ -5,3 +5,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+article = Article.create :title => 'absolutely new seeded', :body => 'some text body goes here', :published_at => Date.new
+user = User.create :email => 'mary@example.com', :password => 'guessit'
+Category.create [{:name => 'Programming'},
+{:name => 'Event'},
+{:name => 'Travel'},
+{:name => 'Music'},
+{:name => 'TV'}]
