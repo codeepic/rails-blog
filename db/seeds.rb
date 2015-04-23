@@ -8,22 +8,22 @@
 
 user = User.create :email => 'mary@example.com',
                    :password => 'guessit',
-                   :password_confirmation => 'quessit'
-Category.create [{:name => 'Programing'},
+                   :password_confirmation => 'guessit'
+Category.create [{:name => 'Programming'},
                  {:name => 'Event'},
                  {:name => 'Travel'},
                  {:name => 'Music'},
                  {:name => 'TV'}]
-
-user.articles.create :title => 'Advanced Active Record', 
-                     :body => 'Models need t orelate to each other...',
+user.articles.create :title => 'Advanced Active Record',
+                     :body => "Models need to relate to each other. In the real world, ..",
                      :published_at => Date.today
-user.articles.create :title => 'one to many associations',
-                     :body => 'one to many associations describe the pattern',
+user.articles.create :title => 'One-to-many associations',
+                     :body => "One-to-many associations describe a pattern ..",
                      :published_at => Date.today
 user.articles.create :title => 'Associations',
-                     :body => 'active record makes working with assoc easy',
+                     :body => "Active Record makes working with associations easy..",
                      :published_at => Date.today
+
 
 #was
 # article = Article.create :title => 'absolutely new seeded', :body => 'some text body goes here', :published_at => Date.new
