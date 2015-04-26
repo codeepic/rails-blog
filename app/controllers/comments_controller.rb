@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
   def create
     @comment = @article.comments.new(comment_params)
     if @comment.save
-      redirect_to @articl, notice: 'Thanks for the comment!'
+      redirect_to @article, notice: 'Thanks for the comment!'
     else
     	redirect_to @article, alert: 'Unable to add comment'
     end
@@ -18,7 +18,7 @@ class CommentsController < ApplicationController
 
 	private
 	def load_article
-    @article = Articles.find(params[:article_id]
+    @article = Article.find(params[:article_id])
 	end
 
 	def comment_params
