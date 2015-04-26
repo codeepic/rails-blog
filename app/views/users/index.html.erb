@@ -1,0 +1,9 @@
+<h1>Users</h1>
+
+<ul>
+<% @users.each do |user| %>
+  <li>User email: <%= user.email %></li>
+<% end %>
+</ul>
+
+<%= link_to 'Go to articles', articles_path %>
