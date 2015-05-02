@@ -1,0 +1,20 @@
+<%= form_tag session_path do %>
+  <div class="field">
+  	<%= label_tag :email %><br />
+  	<%= text_field_tag :email %>
+  </div>
+  <div class="field">
+  	<%= label_tag :password %><br />
+  	<%= password_field_tag :password %>
+  </div>
+  <div class="actions">
+  	<%= submit_tag 'Login' %>
+  </div>
+<% end %>
+
+
+<p>New action is a login page</p>
+<p>To avoid confusion, let’s map this in your mind; to log in, you need to create a session; to log out, you clear that
+session. You use new_session_path as your login path, and the new template is your login page. POSTing the form in
+the new session page to session_path creates the session. Finally, submitting a DELETE request to session_path clears
+that session, performing a log out. Now, let’s map it in the routes file, as shown in Listing 8-16.</p>

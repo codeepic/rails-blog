@@ -4,7 +4,15 @@ Rails.application.routes.draw do
     resources :comments
   end
   resources :users
+  resource :session, :only => [:new, :create, :destroy] 
+  get '/login' => 'sessions#new', :as => 'login'
+  get '/logout' => 'session#destroy', :as => 'logout'
+
+  # you define session in singular form, because you never
+  # deal with a set of sessions at once
   
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
