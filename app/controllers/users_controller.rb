@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :authenticate, only: [:edit, :update]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -22,9 +23,11 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = current_user
   end
 
   def update 
+    @user = current_user
     if @user.update(user_params)
       redirect_to articles_path, notice: 'Updated user information successfully'
     else
@@ -35,7 +38,8 @@ class UsersController < ApplicationController
   private 
   
   def set_user
-    @user = User.find(params[:id])
+    #@user = User.find(params[:id])
+    @user = current_user
   end
 
   def user_params
