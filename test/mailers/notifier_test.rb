@@ -8,16 +8,7 @@ class NotifierTest < ActionMailer::TestCase
 
     assert_equal 'Interesting Article', message.subject
     assert_equal ['dude@example.com'], message.to
-    assert_equal ['from@example.com'], message.from # where is it coming from?
+    assert_equal ['from@example.com'], message.from # it's coming from application_mailer.rb
   end
-
-  # old failing test added by rails
-  # test "email_friend" do
-  #   mail = Notifier.email_friend
-  #   assert_equal "Email friend", mail.subject
-  #   assert_equal ["to@example.org"], mail.to
-  #   assert_equal ["from@example.com"], mail.from
-  #   assert_match "Hi", mail.body.encoded
-  # end
 
 end
