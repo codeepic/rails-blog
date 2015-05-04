@@ -9,7 +9,7 @@ class Notifier < ApplicationMailer
     @article = article
     @sender_name = sender_name
 
-    mail :to => receiver_email, :subject => 'Interesting article'
+    mail :to => receiver_email, :subject => 'Interesting Article'
 
     # @greeting = "Hi"
     # mail to: "xavier.glab@channelforge.com"
