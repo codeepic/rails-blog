@@ -1,4 +1,4 @@
-<%= form_for([@article, @article.comments.new]) do |f| %>
+<%= form_for([@article, @article.comments.new], remote: true) do |f| %>
 <!-- passing an array to form_for function of @article and @article.comments.new
    informs Rails that the form here is for the nested resource -->
   <div class="field">

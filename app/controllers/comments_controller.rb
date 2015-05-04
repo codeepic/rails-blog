@@ -5,9 +5,16 @@ class CommentsController < ApplicationController
   def create
     @comment = @article.comments.new(comment_params)
     if @comment.save
-      redirect_to @article, notice: 'Thanks for the comment!'
+      respond_to do |format|
+        format.html { redirect_to @article, notice: 'Thanks for the comment'}
+        format.js #since no code is added here, rails looks for
+        #a template named after the view, looking for create.js.erb
+      end
     else
-    	redirect_to @article, alert: 'Unable to add comment'
+    	respond_to do |format|
+        format.html { redirect_to @article, alert: 'Unable to add comment'}
+        format.js {render 'fail_create.js.erb'}
+      end
     end
   end
 
@@ -15,8 +22,14 @@ class CommentsController < ApplicationController
     @article = current_user.articles.find(params[:article_id])
 
     @comment = @article.comments.find(params[:id])
+
     @comment.destroy
-    redirect_to @article, notice: 'Comment Deleted'
+    
+    respond_to do |format|
+      format.html {redirect_to @article, notice: 'Commente removed'}
+      format.js # will point to destroy.js.erb
+    end
+
   end
 
 	private
