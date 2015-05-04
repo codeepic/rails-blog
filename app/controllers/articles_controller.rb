@@ -30,7 +30,7 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.save
-        format.html { redirect_to @article, notice: 'Article was successfully created.' }
+        format.html { redirect_to @article, notice: t('articles.update_success') }
         format.json { render :show, status: :created, location: @article }
       else
         format.html { render :new }
@@ -46,7 +46,7 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.update(article_params)
-        format.html { redirect_to @article, notice: 'Article was successfully updated.' }
+        format.html { redirect_to @article, notice: t('articles.update_success') }
         format.json { render :show, status: :ok, location: @article }
       else
         format.html { render :edit }
@@ -61,7 +61,7 @@ class ArticlesController < ApplicationController
     @article = current_user.articles.find(params[:id])
     @article.destroy
     respond_to do |format|
-      format.html { redirect_to articles_url, notice: 'Article was successfully destroyed.' }
+      format.html { redirect_to articles_url, notice: t('articles.destroy_success') }
       format.json { head :no_content }
     end
   end
@@ -70,7 +70,7 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
 
     Notifier.email_friend(@article, params[:name], params[:email]).deliver
-    redirect_to @article, :notice => 'Successfully sent a message to your friend'
+    redirect_to @article, :notice => t('articles.notify_friend_success')
   end
 
   private
