@@ -21,3 +21,25 @@
 
 en:
   hello: "Hello world"
+  bye: "Goodbye"
+  general:
+    edit: Edit
+    delete: Delete
+    are_you_sure: Are you sure?
+  articles:
+    create_success: "Article was successfully created."
+    update_success: "Article was successfully updated."
+    destroy_success: "Article was successfully destroyed."
+    notify_friend_success: "Successfully sent a message to your friend"
+  comment:
+    errors: 
+      not_publixhed_yer: "is not published yet"
+  activerecord:
+    errors:
+      models:
+        article:
+          attributes:
+            title:
+              blank: "title can't be blank"
+            body:
+              blank: "body can't be blank"
