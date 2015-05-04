@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :users
   resource :session, :only => [:new, :create, :destroy] 
   get '/login' => 'sessions#new', :as => 'login'
-  get '/logout' => 'session#destroy', :as => 'logout'
+  get '/logout' => 'sessions#destroy', :as => 'logout'
 
   # you define session in singular form, because you never
   # deal with a set of sessions at once

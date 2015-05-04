@@ -23,7 +23,7 @@ class UserStoriesTest < ActionDispatch::IntegrationTest
   test 'should logout user and redirect' do
     get logout_path
 
-    assert_response :success
+    assert_response :redirect
     assert_redirected_to root_path
     assert_nil session[:user]
 
@@ -35,7 +35,7 @@ class UserStoriesTest < ActionDispatch::IntegrationTest
   test 'should login create article and logout' do
     # login
     get login_path
-    assert_response :succcess
+    assert_response :success
     assert_template 'new'
 
     post session_path, :email => 'eugene@example.com', :password => 'secret'
@@ -46,7 +46,7 @@ class UserStoriesTest < ActionDispatch::IntegrationTest
 
     assert_response :success
     assert_template 'index'
-    assert_session[:user_id]
+    assert session[:user_id]
 
     # create new article
     get new_article_path
@@ -69,7 +69,7 @@ class UserStoriesTest < ActionDispatch::IntegrationTest
 
     get logout_path
     
-    assert_response :response
+    assert_response :redirect
     assert_redirected_to root_path
     assert_nil session[:user]
 
