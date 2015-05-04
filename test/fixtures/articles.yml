@@ -1,11 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  body: MyText
-  published_at: 2015-04-07 16:33:27
+welcome_to_rails:
+  user: eugene
+  title: "Welcome to Rails"
+  body: "Rails is such a nice web framework written in Ruby"
+  published_at: <%= 3.days.ago %>
 
-two:
-  title: MyString
-  body: MyText
-  published_at: 2015-04-07 16:33:27
+# one:
+#   title: MyString
+#   body: MyText
+#   published_at: 2015-04-07 16:33:27
+
+# two:
+#   title: MyString
+#   body: MyText
+#   published_at: 2015-04-07 16:33:27

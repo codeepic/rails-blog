@@ -14,4 +14,9 @@ class Notifier < ApplicationMailer
     # @greeting = "Hi"
     # mail to: "xavier.glab@channelforge.com"
   end
+
+  def comment_added(comment)
+    @article = comment.article
+    mail :to => @article.user.email, :subject => "New comment for '#{article.title}'"
+  end
 end
