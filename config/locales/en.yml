@@ -50,6 +50,7 @@ en:
     articles: articles
     notify_friend_success: Successfully sent a message to your friend
   users:
+      go_to_users: Go to users
       new_user: New user
       edit_password: Edit Password
       editing_user: Editing user

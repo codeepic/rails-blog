@@ -17,7 +17,7 @@
 				<%= link_to t('users.edit_password'), edit_user_path(current_user) %> |
 				<%= link_to t('sessions.logout'), logout_path %>
   		<% else %>
-        <%= link_to 'Login', login_path %>
+        <%= link_to t('sessions.login'), login_path %>
   		<% end %>
   	</div>
   </div><!-- #header ENDS-->
